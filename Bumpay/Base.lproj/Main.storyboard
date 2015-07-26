@@ -30,19 +30,109 @@
                                     <navigationItem title="Bumpay" id="sZB-BI-vUe"/>
                                 </items>
                             </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p3i-Hd-DbE">
+                                <rect key="frame" x="282" y="174" width="36" height="30"/>
+                                <state key="normal" title="Send">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="sendCash:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ZVP-qh-p4N"/>
+                                    <segue destination="hVE-an-Cbg" kind="show" identifier="sendCashSegue" id="G7N-gC-xOi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YqY-or-FJu">
+                                <rect key="frame" x="273" y="226" width="55" height="30"/>
+                                <state key="normal" title="Receive">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="receiveCash:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Yw8-Ks-8f6"/>
+                                    <segue destination="JkW-GD-ViL" kind="show" id="sfa-aN-8Uc"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Current Price" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xrp-6j-4Py">
+                                <rect key="frame" x="202" y="112" width="196" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="tG2-4p-gEI" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="2aD-Mq-Hjr"/>
+                            <constraint firstAttribute="centerX" secondItem="YqY-or-FJu" secondAttribute="centerX" id="4y8-AB-cpn"/>
+                            <constraint firstAttribute="centerX" secondItem="p3i-Hd-DbE" secondAttribute="centerX" id="5NU-sc-oRa"/>
                             <constraint firstAttribute="trailingMargin" secondItem="tG2-4p-gEI" secondAttribute="trailing" constant="-16" id="HVb-Rk-dMU"/>
                             <constraint firstAttribute="centerX" secondItem="tG2-4p-gEI" secondAttribute="centerX" id="T0S-kE-90w"/>
                             <constraint firstItem="tG2-4p-gEI" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="Zxb-Sx-GqN"/>
+                            <constraint firstAttribute="centerX" secondItem="Xrp-6j-4Py" secondAttribute="centerX" id="bY2-dE-bIx"/>
                         </constraints>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="currentPriceLabel" destination="Xrp-6j-4Py" id="DMo-CO-lod"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--Send View Controller-->
+        <scene sceneID="U7L-Hf-cbE">
+            <objects>
+                <viewController id="hVE-an-Cbg" customClass="SendViewController" customModule="Bumpay" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Lv7-9a-gSa"/>
+                        <viewControllerLayoutGuide type="bottom" id="nxF-H2-sim"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ltw-jw-7ZY">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Bump with another device for sending" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JDN-gt-FG9">
+                                <rect key="frame" x="155" y="128" width="292" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="JDN-gt-FG9" secondAttribute="centerX" id="CuH-fz-6ol"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W1y-hV-41D" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1361" y="492"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="3PE-3O-iQK">
+            <objects>
+                <viewController id="JkW-GD-ViL" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xtW-Au-Fcx"/>
+                        <viewControllerLayoutGuide type="bottom" id="mJz-6Y-N1E"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hgc-nB-eCf">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Bump with another device for receiving" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cTb-db-Xlv">
+                                <rect key="frame" x="151" y="99" width="300" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="cTb-db-Xlv" secondAttribute="centerX" id="dvs-Q1-95g"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wbE-fl-qpF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1361" y="1315"/>
         </scene>
     </scenes>
 </document>

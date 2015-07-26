@@ -1,0 +1,6 @@
+framework module Pods_Bumpay {
+  umbrella header "Pods-Bumpay-umbrella.h"
+
+  export *
+  module * { export * }
+}
